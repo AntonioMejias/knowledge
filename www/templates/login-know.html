@@ -1,18 +1,21 @@
+
+
+<ion-view view-title="Knowledge">
 <ion-content class="padding">
-    <form >
-        <div class="list">
+    <form ng-submit="login()">
+        <div class="list list-insets">
             <label class="item item-input">
-                <input type="text" placeholder="Username o Correo">
+                <input type="text" placeholder="Username o Correo" ng-model="usuario.login">
             </label>
             <label class="item item-input">
-                <input type="password" placeholder="Contraseña" ng-model="data.password">
+                <input type="password" placeholder="Contraseña" ng-model="usuario.password">
             </label>
             <label class="item item-input">
-                <textarea placeholder="Comments"></textarea>
+                <input type="submit" class="button button-block button-calm" value="Login">
             </label>
-            <label class="item item-input">
-                <input type="text" class="button button-block button-calm" value="Login">
-            </label>
+            <a href="#/registro" class="button button-dark button-clear button-block ">Regístrate en Knowledge</a>
         </div>
     </form>
+    
 </ion-content>
+</ion-view>

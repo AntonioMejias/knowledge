@@ -1,5 +1,44 @@
 angular.module('starter.services', [])
 
+.factory('RegistroService',function ($resource) {
+
+    var API_PATH = 'https://knowledge-antoniomejias.c9users.io/user/create';
+
+    var register = $resource(API_PATH);
+    var registroService = {};
+
+    registroService.registrarUser = function (datos) {
+        register.save(datos, function(response) {
+            console.log(response);
+            return response;
+        }, function(errorResult) {
+            console.log(errorResult);
+        }); 
+    }
+
+    return registroService;
+})
+
+.factory('LoginService',function ($resource) {
+
+    var API_PATH = 'https://knowledge-antoniomejias.c9users.io/user/login';
+
+    var login = $resource(API_PATH);
+    var loginService = {};
+
+    loginService.loginUser = function (datos) {
+        login.save(datos, function(response) {
+            console.log(response);
+            return response;
+        }, function(errorResult) {
+            console.log(errorResult);
+        }); 
+    }
+
+    return loginService;
+})
+
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

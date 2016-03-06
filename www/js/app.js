@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngResource'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -31,19 +31,36 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('login', {
+   .state('login', {
     url: '/login',
-    views: {
-      'login': {
+    
          templateUrl: 'templates/login-know.html',
          'controller':'LoginCtrl'
-      }
-    }
+      
+    
    
   })
 
-  // setup an abstract state for the tabs directive
+   .state('registro', {
+    url: '/registro',
+    
+         templateUrl: 'templates/registro-know.html',
+         'controller':'RegistroCtrl'
+      
+    
+   
+  })
+
+   .state('home', {
+    url: '/home',
+    
+         templateUrl: 'templates/home-know.html'
+      
+    
+   
+  })
+
+  /*// setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
     abstract: true,
@@ -89,9 +106,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  });*/
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab');
+  $urlRouterProvider.otherwise('/login');
 
 });
