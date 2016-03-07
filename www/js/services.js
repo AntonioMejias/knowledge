@@ -8,12 +8,7 @@ angular.module('starter.services', [])
     var registroService = {};
 
     registroService.registrarUser = function (datos) {
-        return register.save(datos)/*, function(response) {
-            console.log(response);
-            return response;
-        }, function(errorResult) {
-            console.log(errorResult);
-        }); */
+        return register.save(datos)
     }
 
     return registroService;
@@ -27,16 +22,29 @@ angular.module('starter.services', [])
     var loginService = {};
 
     loginService.loginUser = function (datos) {
-        return login.save(datos)/*, function(response) {
-            console.log(response);
-            return response;
-        }, function(errorResult) {
-            console.log(errorResult);
-        }); */
+        return login.save(datos)
     }
 
     return loginService;
 })
+
+
+.factory('TestsService',function ($resource) {
+
+    var API_PATH = 'https://knowledge-antoniomejias.c9users.io/test/showAllTests';
+    var tests = $resource(API_PATH);
+
+    return {
+            getAllTests: function () {
+                return tests.get();
+        }
+    };
+})
+
+.factory('TestService',function ($resource) {
+
+})
+
 
 
 .factory('Chats', function() {

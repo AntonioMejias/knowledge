@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
    
   })
 
-  // setup an abstract state for the tabs directive
+  /*// setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
     abstract: true,
@@ -104,6 +104,60 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
+      }
+    }
+  })*/
+
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+  })
+
+  .state('app.search', {
+    url: '/search',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/search.html'
+      }
+    }
+  })
+
+  .state('app.tests', {
+      url: '/tests',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tests-know.html',
+          controller: 'TestsCtrl'
+        }
+      }
+    })
+
+    .state('app.singletest', {
+    url: '/tests/:testId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/test-know.html',
+        controller: 'TestCtrl'
+      }
+    }
+    })
+    .state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
+
+  .state('app.single', {
+    url: '/playlists/:playlistId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/playlist.html',
+        controller: 'PlaylistCtrl'
       }
     }
   });

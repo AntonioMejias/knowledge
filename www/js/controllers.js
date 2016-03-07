@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
         .$promise.then(function (response) {
                 console.log(response);
                 $scope.cargando = false;
-                $location.path("tab-dash");
+                $location.path("/app/playlists");
             }); 
      
   }
@@ -34,8 +34,37 @@ angular.module('starter.controllers', [])
     }
 
 })
+.controller('TestsCtrl', function($scope, TestsService) {
+    $scope.tests = [];
+    TestsService.getAllTests().$promise.then(function (response) {
+        $scope.tests = response.tests;
+        console.log($scope.tests);
+    })  
 
-.controller('ChatsCtrl', function($scope, Chats) {
+
+
+})
+
+.controller('TestCtrl', function($scope, $stateParams) {
+
+
+})
+
+.controller('PlaylistsCtrl', function($scope) {
+  $scope.playlists = [
+    { title: 'Reggae', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 },
+    { title: 'Indie', id: 4 },
+    { title: 'Rap', id: 5 },
+    { title: 'Cowbell', id: 6 }
+  ];
+})
+
+.controller('PlaylistCtrl', function($scope, $stateParams) {
+});
+
+/*.controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -58,4 +87,4 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+});*/

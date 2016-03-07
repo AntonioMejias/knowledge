@@ -4,3 +4,8 @@
     margin-right: auto;
     display: block;
 }
+
+.padding-c {
+	padding:20px;
+	box-sizing: border-box;
+}

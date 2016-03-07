@@ -1,0 +1,29 @@
+<ion-view view-title="Knowledge">
+  <ion-content class="padding-">
+    <h2><center>¡Escoge una Temática!</center></h2>
+
+    <ion-list>
+        <!--<ion-item menu-close href="#/app/playlists">
+        <i class="ion-ios-home"></i>
+          Home
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+         <i class="icon ion-person-stalker"></i>
+          Perfil
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+        <i class="ion-ios-game-controller-b"></i>
+        
+          Juega
+        </ion-item>-->
+
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="test in tests" type="item-text-wrap" href="#/app/tests/{{test.id}}">
+	        <!--<img ng-src="{{chat.face}}">-->
+	        <h2 ng-bind="test.nombre"></h2>
+	        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      	</ion-item>
+        
+      </ion-list>
+  </ion-content>
+</ion-view>
