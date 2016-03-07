@@ -1,0 +1,31 @@
+<ion-view title="Registro">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form ng-hide="cargando" ng-submit="registrar()" class="list">
+            <label class="item item-input" >              
+                <input type="text" placeholder="Nombre" ng-model="usuario.name">
+            </label>
+            <label class="item item-input" >
+                
+                <input type="text" placeholder="Edad" ng-model="usuario.edad">
+            </label>
+            <label class="item item-input" >
+                
+                <input type="text" placeholder="Nickname" ng-model="usuario.login">
+            </label>
+            <label class="item item-input" >
+                
+                <input type="email" placeholder="Email" ng-model="usuario.email">
+            </label>
+            <label class="item item-input" >
+                <input type="password" placeholder="Password" ng-model="usuario.password"> 
+            </label>
+            <input type="submit" class="button button-positive button-block " value="Registrate">
+
+            <a href="#/login" class="button button-dark button-clear button-block ">Ingresa a Knowledge</a>
+
+            
+        </form>
+
+        <ion-spinner ng-show="cargando" icon="bubbles"></ion-spinner>
+    </ion-content>
+</ion-view>
