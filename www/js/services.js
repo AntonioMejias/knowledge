@@ -8,12 +8,12 @@ angular.module('starter.services', [])
     var registroService = {};
 
     registroService.registrarUser = function (datos) {
-        register.save(datos, function(response) {
+        return register.save(datos)/*, function(response) {
             console.log(response);
             return response;
         }, function(errorResult) {
             console.log(errorResult);
-        }); 
+        }); */
     }
 
     return registroService;
@@ -27,12 +27,12 @@ angular.module('starter.services', [])
     var loginService = {};
 
     loginService.loginUser = function (datos) {
-        login.save(datos, function(response) {
+        return login.save(datos)/*, function(response) {
             console.log(response);
             return response;
         }, function(errorResult) {
             console.log(errorResult);
-        }); 
+        }); */
     }
 
     return loginService;

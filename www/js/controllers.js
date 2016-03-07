@@ -5,12 +5,18 @@ angular.module('starter.controllers', [])
   $scope.prueba = function () {
      console.log("haciendo una pruebita");
   }
-
+  $scope.cargando = false;
   $scope.usuario ={}
   $scope.login = function (argument) {
+      $scope.cargando = true;
      console.log($scope.usuario);
-     LoginService.loginUser($scope.usuario); 
-     $location.path("/home");
+     LoginService.loginUser($scope.usuario)
+        .$promise.then(function (response) {
+                console.log(response);
+                $scope.cargando = false;
+                $location.path("tab-dash");
+            }); 
+     
   }
 
 
@@ -21,7 +27,10 @@ angular.module('starter.controllers', [])
     $scope.usuario={}
     $scope.registrar= function () {
         //console.log($scope.usuario);
-        console.log(RegistroService.registrarUser($scope.usuario));
+        RegistroService.registrarUser($scope.usuario)
+            .then(function (response) {
+                console.log(response);
+            });
     }
 
 })
