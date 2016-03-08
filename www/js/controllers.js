@@ -45,8 +45,48 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('TestCtrl', function($scope, $stateParams) {
+.controller('TestCtrl', function($scope,$location, $stateParams,$ionicNavBarDelegate,TestService,CheckService) {
+    
+    var ciclo = 0;
+    var infoTest = {};
 
+    $ionicNavBarDelegate.showBackButton(false);
+
+    TestService.getDataTest()({id:$stateParams.testId},function (response) {
+
+        console.log(response);
+        infoTest.test = response.id;
+        infoTest.user = 1;
+        infoTest.respuestas = [];
+
+        $scope.preguntas = response.preguntas;
+        $scope.tematia = response.nombre;
+        $scope.preguntaActual = $scope.preguntas[ciclo];
+        $scope.respuestas = $scope.preguntas[ciclo].answers;
+
+    });
+
+    $scope.siguientePregunta = function (idanswer) {
+
+        infoTest.respuestas.push({pregunta:$scope.preguntaActual.id, idanswer:idanswer})
+        if (ciclo < 3) { 
+            ciclo++;
+            $scope.preguntaActual = $scope.preguntas[ciclo];
+            $scope.respuestas = $scope.preguntas[ciclo].answers;
+        } else {
+            CheckService.dataQuiz = infoTest;
+            $location.path("/app/result");
+        }
+        
+    }
+
+})
+
+.controller('ResultCtrl',function($scope, CheckService){
+
+    CheckService.validateQuiz().then(function (response) {
+         console.log(response);
+    })
 
 })
 

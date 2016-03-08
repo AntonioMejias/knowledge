@@ -42,7 +42,26 @@ angular.module('starter.services', [])
 })
 
 .factory('TestService',function ($resource) {
+   
+    var tests = $resource('https://knowledge-antoniomejias.c9users.io/test/getTestData/:id',{id: '@id'});
 
+    return {
+            getDataTest: function () {
+                return tests.save;
+        }
+    };
+})
+
+.factory('CheckService',function ($resource) {
+   
+    var check = $resource('https://knowledge-antoniomejias.c9users.io/test/validateQuiz');
+
+    return {
+            dataQuiz: {},
+            validateQuiz: function () {
+                return check.save(this.dataQuiz).$promise;
+        }
+    };
 })
 
 

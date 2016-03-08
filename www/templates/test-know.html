@@ -1,0 +1,18 @@
+<ion-view view-title="Knowledge">
+  <ion-content >
+  		<h1 ng-bind="preguntaActual.nombre"></h1>
+     <ion-list ng-cloak>
+
+	
+        <ion-item class="item-remove-animate item-avatar item-icon-right"  ng-repeat="respuesta in respuestas" ng-click="siguientePregunta(respuesta.id)" type="item-text-wrap">
+	        <!--<img ng-src="{{chat.face}}">-->
+	        <h2 ng-bind="respuesta.nombre"></h2>
+
+	        
+	      
+
+      	</ion-item>
+        
+      </ion-list>
+  </ion-content>
+</ion-view>

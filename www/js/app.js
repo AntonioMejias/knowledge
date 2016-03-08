@@ -142,6 +142,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     }
     })
+    .state('app.result', {
+      url: '/result',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/result-know.html',
+          controller: 'ResultCtrl'
+        }
+      }
+    })
     .state('app.playlists', {
       url: '/playlists',
       views: {
