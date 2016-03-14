@@ -1,29 +1,25 @@
 <ion-view view-title="Knowledge">
-  <ion-content class="padding-">
+  <ion-content class="padding-" style="overflow:hidden;">
     <h2><center>¡Escoge una Temática!</center></h2>
 
-    <ion-list>
-        <!--<ion-item menu-close href="#/app/playlists">
-        <i class="ion-ios-home"></i>
-          Home
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-         <i class="icon ion-person-stalker"></i>
-          Perfil
-        </ion-item>
-        <ion-item menu-close href="#/app/browse">
-        <i class="ion-ios-game-controller-b"></i>
-        
-          Juega
-        </ion-item>-->
+    <ion-list ng-hide="cargando">
 
-        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="test in tests"  type="item-text-wrap" href="#/app/tests/{{test.id}}">
+
+        <ion-item class="item-remove-animate item-avatar item-icon-right no-border test" ng-repeat="test in tests"  type="item-text-wrap" href="#/app/tests/{{test.id}}">
 	        <!--<img ng-src="{{chat.face}}">-->
-	        <h2 ng-bind="test.nombre"></h2>
-	        <i class="icon ion-chevron-right icon-accessory"></i>
+          <center><i class="{{test.icon}}"></i></center>
+	        <center><p class="test-font" ng-bind="test.nombre"></p>
+	        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
 
       	</ion-item>
         
       </ion-list>
+
+      <div ng-show="cargando" class="loading">
+        <div class="center">
+            <ion-spinner  icon="bubbles"></ion-spinner>
+            <center class="mess"><p>Cargando...</p><center>
+        </div>          
+    </div>
   </ion-content>
 </ion-view>

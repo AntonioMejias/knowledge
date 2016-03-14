@@ -17,19 +17,32 @@
       <h1 class="title">Left</h1>
     </ion-header-bar>
     <ion-content scroll="false">
+    <div id="wrapper-image">
+      
+        <div class="perfil-image"></div>
+        <center><p class="username" ng-bind="user.login"></p><center>
+        <!--<hr>-->
+    </div>
+      
+    
       <ion-list>
         <ion-item menu-close href="#/app/playlists">
         <i class="ion-ios-home"></i>
-          Home
+          <span class="text-menu">Home</span>
         </ion-item>
         <ion-item menu-close href="#/app/search">
          <i class="icon ion-person-stalker"></i>
-          Perfil
+          <span class="text-menu">Perfil</span>
         </ion-item>
         <ion-item menu-close href="#/app/tests">
         <i class="ion-ios-game-controller-b"></i>
-        
-          Juega
+            <span class="text-menu">Juega</span>
+          
+        </ion-item>
+        <ion-item menu-close ng-click="logout()">
+        <i class="ion-power"></i>
+            <span class="text-menu">Salir</span>
+          
         </ion-item>
         
       </ion-list>

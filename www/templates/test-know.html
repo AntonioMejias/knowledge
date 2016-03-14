@@ -1,18 +1,32 @@
 <ion-view view-title="Knowledge">
-  <ion-content >
-  		<h1 ng-bind="preguntaActual.nombre"></h1>
-     <ion-list ng-cloak>
-
-	
-        <ion-item class="item-remove-animate item-avatar item-icon-right"  ng-repeat="respuesta in respuestas" ng-click="siguientePregunta(respuesta.id)" type="item-text-wrap">
+  <ion-content ng-class="background" id="question" style="overflow:hidden;">
+  <div class="padd-head">
+    <p class="title-q roboto" ng-bind="preguntaActual.nombre"></p>
+  </div>
+  		
+     <ion-list class="hola" ng-cloak ng-hide="cargando">
+      
+      <div  class="wrapper" >
+	     
+        <ion-item ng-class="colorquestion"  class="item-remove-animate item-avatar item-icon-right no-background"  ng-repeat="respuesta in respuestas" ng-click="siguientePregunta(respuesta.id)" type="item-text-wrap">
 	        <!--<img ng-src="{{chat.face}}">-->
-	        <h2 ng-bind="respuesta.nombre"></h2>
-
-	        
-	      
+	        <!--<h2 ng-bind="respuesta.nombre"></h2>-->
+          <div class="content-question ">
+            <span><i class="{{icon.tipo}} {{icon.color}}"></i></span>
+            <p class=" white" ng-bind="respuesta.nombre"></p>
+          </div>
+          
+      
 
       	</ion-item>
-        
+        </div>
       </ion-list>
+
+      <div ng-show="cargando" class="loading">
+        <div class="center">
+            <ion-spinner   icon="bubbles"></ion-spinner>
+            <center class="mess"><p>Cargando...</p><center>
+        </div>          
+    </div>
   </ion-content>
 </ion-view>

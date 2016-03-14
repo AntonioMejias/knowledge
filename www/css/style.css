@@ -1,4 +1,56 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: "montserrat";
+  src:url("Montserrat-Light.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cooperheavy";
+  src:url("CooperHewitt-HeavyItalic.otf");
+
+}
+
+@font-face {
+  font-family: "cooperbold";
+  src:url("CooperHewitt-Bold.otf");
+}
+
+@font-face {
+  font-family: "testfamily";
+  src:url("Vonique64.ttf");
+}
+@font-face {
+  font-family: "testfamilya";
+  src:url("Vonique64-Bold-Italic.ttf");
+}
+@font-face {
+  font-family: "testfamilyb";
+  src:url("Vonique64-Bold.ttf");
+}
+@font-face {
+  font-family: "testfamilyc";
+  src:url("Vonique64-Italic.ttf");
+}
+
+
+body {
+	font-family: montserrat !important;
+}
+
+h1,h2,h3 {
+	font-family: cooperbold !important;
+}
+
+*.test-font{
+  font-family: testfamily !important;
+}
+.loading {
+  display: inline-flex;
+  left:25%;
+}
+
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -8,4 +60,349 @@
 .padding-c {
 	padding:20px;
 	box-sizing: border-box;
+}
+
+.ion-ios-home, .ion-person-stalker, .ion-ios-game-controller-b {
+  font-size: 30px;
+  padding-right: 10px;
+  padding-top: 20px;
+
+  
+}
+
+span.text-menu {
+	vertical-align: center;
+	margin-top: 0px;
+	
+}
+
+.username {
+	margin-top: 5px;
+	font-size: 18px;
+
+}
+
+.perfil-image {
+	margin-bottom: 0px;
+	width: 85px;
+	height: 85px;
+	border-radius: 50%;
+	background-color: #292929;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#wrapper-image {
+	padding: 10px 0px 10px 0px;	
+
+}
+
+.loading {
+	position:fixed;
+    top: 50%;
+}
+
+.center {
+	position:fixed;
+    left: 30%;
+}
+
+.size.spinner svg {
+	
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+	width: 40px;
+	height: 40px;
+
+}
+
+.mess {
+	margin-top: 20px;
+  color: white;
+}
+
+.mess p {
+	font-size: 20px;
+}
+
+input {
+	font-family: montserrat !important;
+}
+
+.back-login-register {
+	background-color: #e43f3f;
+}
+
+.red-custom-button {
+	background-color: #cc1d1d;
+	color: white;
+
+}
+
+.red-custom-button:hover {
+	color: white;
+}
+
+.white {
+	color:white !important;
+}
+
+
+#form-register label {
+	background: none;
+	color: white;
+	border: 0;
+
+	outline: none;
+  	z-index: 1;
+  	position: relative;
+  	margin-bottom: 10px;
+
+
+}
+
+
+#form-register{
+  
+  margin: 0 30px 50px;
+}
+#form-register label input {
+	font-size: 20px;
+
+ 
+}
+
+#form-register input:focus ~ span {
+  color: #9d9d9d;
+  -webkit-transform: translate(-12%, -50%) scale(0.75);
+          transform: translate(-12%, -50%) scale(0.75);
+}
+
+#form-register input:valid ~ span {
+  color: #9d9d9d;
+  -webkit-transform: translate(-12%, -50%) scale(0.75);
+          transform: translate(-12%, -50%) scale(0.75);
+}
+
+#form-register span {
+	
+	 position: absolute;
+  top: 2;
+  left: 0;
+  color: #757575;
+ 
+
+  
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+
+}
+
+#form-register .input-container .barc {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #cccccc;
+  width: 100%;
+  height: 1px;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+#form-register input:focus ~ span + .barc {
+
+  height: 2px;
+  background-color: #ffffff;
+}
+
+#form-register input[type=submit]{
+	margin-top: 30px;
+}
+
+/***TESTS*****/
+
+.no-border {
+  border:0;
+}
+
+.test {
+  box-sizing: border-box;
+  /*padding: 33.3333%;*/
+  background-color:  rgb(27,188,155);;
+  
+}
+
+.test:last-child {
+  background-color: rgb(241,196,15);
+}
+
+.test:first-child {
+  
+  background-color:  rgb(232,76,61);;
+}
+
+.test > .item-content{
+    background: none;
+    box-sizing: border-box;
+    padding: 9%;
+    overflow: hidden;
+}
+
+.test > .item-content i{
+    font-size: 100px;
+    color:white;
+}
+
+.test > .item-content p{
+
+  font-size: 22px;
+  color:white;
+  padding-top: 10px;
+  
+}
+/***TESTS*****/
+
+
+/***QUESTIONS**/
+
+
+.padd-head {
+  padding: 20px 20px 0px 20px;
+}
+
+.padd-head p {
+  font-size: 22px;
+  text-align: center;
+  line-height: 28px;
+  background-color: white;
+  padding:7px;
+}
+
+
+#question .list {
+  
+  
+
+}
+
+#question .list .wrapper{
+  width: 100%;
+  height: 100%;
+  /*background-color:  rgb(245,176,61);*/
+  padding: 30% 2% 36% 2%;
+
+}
+
+.content-question {
+
+  display: inline-flex;
+  
+}
+
+.content-question span {
+  
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+    width: 40px;
+    height: 40px
+ 
+}
+
+.content-question span i {
+  
+    /*color: rgb(245,176,61);*/
+    font-weight: bold;
+    /* text-align: center; */
+    font-size: 25px;
+
+}
+
+.content-question p {
+  
+    padding: 10% 0;
+    margin-left: 15px
+    
+}
+
+
+.no-background {
+  background: none;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+ /* background-color:  rgb(241,196,15);*/
+  border:0;
+}
+
+
+.content-questions .item-avatar p{
+
+  font-size: 16px;
+  color:white;
+  padding-top: 10px;
+  
+}
+
+.red-question {background-color:  rgb(232,76,61);}
+
+.red-background {background-color:  rgb(206,63,49);}
+
+.green-question {background-color:  rgb(27,188,155);}
+
+.green-background {background-color:  rgb(21,149,123);}
+
+.yellow-question {background-color:  rgb(241,196,15);}
+
+.yellow-background {background-color:  rgb(245,176,61);}
+
+.yellow {color:  rgb(245,176,61);} .red {color:  rgb(206,63,49);} .green{color:  rgb(21,149,123);}
+/***QUESTIONS**/
+
+/***results****/
+.centrado-porcentual {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.center-m {
+  padding-left: 26%;
+  display: inline-flex;
+  width: 100%;
+  background-color: white
+}
+
+.center-m p{
+  font-size: 26px;
+  margin: 3% 0;
+}
+
+
+.center-m {
+  -webkit-box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.21);
+  -moz-box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.21);
+  box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.21);
+}
+
+.padd-head p {
+  -webkit-box-shadow: -1px 3px 6px -1px rgba(0,0,0,0.29);
+  -moz-box-shadow: -1px 3px 6 -1px rgba(0,0,0,0.29);
+  box-shadow: -1px 3px 6 -1px rgba(0,0,0,0.29);
+}
+#chartContent {
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: white
+}
+
+.center-m i {
+  padding-left: 14px;
+  font-size: 40px;
+  color: #F1C40F;
 }

@@ -1,23 +1,33 @@
 
 
 <ion-view view-title="Knowledge">
-<ion-content class="padding">
-    <form  ng-hide="cargando" ng-submit="login()">
-        <div class="list list-insets">
-            <label class="item item-input">
-                <input type="text" placeholder="Username o Correo" ng-model="usuario.login">
+<ion-content overflow-scroll="true" style="overflow:hidden;" class="padding back-login-register">
+    <center>  <h1>LOGO <br> DE <br> KNOWLEDGE</h1></center>
+    <center>  <h1 style="color:white; margin-top:20px; margin-bottom:40px;"> KNOWLEDGE</h1></center>
+    
+    <form  id="form-register" ng-submit="login()" class="list">
+            <label class="item item-input input-container">
+                <input type="text" required placeholder="" ng-model="usuario.login">
+                <span class="white input-label">Usuario ó email</span> 
+                <div class="barc"></div>
             </label>
-            <label class="item item-input">
-                <input type="password" placeholder="Contraseña" ng-model="usuario.password">
+            <label class="item item-input input-container">
+                <input type="password" required placeholder="" ng-model="usuario.password">
+                <span class="white input-label">Contraseña</span>
+                <div class="barc"></div> 
             </label>
-            <label class="item item-input">
-                <input type="submit" class="button button-block button-calm" value="Login">
-            </label>
-            <a href="#/registro" class="button button-dark button-clear button-block ">Regístrate en Knowledge</a>
-        </div>
+          
+            <input type="submit" class="button red-custom-button  button-block " value="Login">
+            
+            <a href="#/registro" class="button white button-dark button-clear button-block ">Regístrate en Knowledge</a>
     </form>
 
-    <ion-spinner ng-show="cargando" class="center" icon="bubbles"></ion-spinner>
     
+    <!--<div ng-show="cargando" class="loading">
+        <div class="center">
+            <ion-spinner   icon="ripple" class="spinner-light"></ion-spinner>
+            <center class="mess"><p>Autenticando...</p><center>
+        </div>          
+    </div>-->
 </ion-content>
 </ion-view>

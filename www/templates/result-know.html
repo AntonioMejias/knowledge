@@ -1,6 +1,21 @@
 <ion-view view-title="Knowledge">
-  <ion-content >
-  		<h1>resultados</h1>
-      <a href="#/app/playlists" class="button button-dark button-clear button-block ">Regresar al menu</a>
+  <ion-content ng-class="background" style="padding-top:20px;overflow: hidden;"  >
+
+  <div style="padding: 0 20px;">
+	  <div class="center-m">
+	  		<p>{{mensaje}}</p>
+			<i class="{{icon}}"></i>
+	  </div>
+	</div>
+		<div style="-webkit-box-sizing:border-box;box-sizing:border-box;padding: 0 20px;">
+  			
+  		
+	  		<div id="chartContent">
+	  			<nvd3 options="vm.options" data="vm.data"></nvd3>
+
+	  		</div>
+   		</div>
+		 
+      <a href="#/app/playlists" class="white button button-dark button-clear button-block ">Regresar al menu</a>
   </ion-content>
 </ion-view>

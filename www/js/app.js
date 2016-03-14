@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngResource'])
+angular.module('starter', ['ionic','nvd3', 'starter.controllers', 'starter.services','ngResource','LocalStorageModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,6 +23,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
   });
 })
 
+.config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('starter');
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -33,6 +38,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
    .state('login', {
     url: '/login',
+    cache: false,
     
          templateUrl: 'templates/login-know.html',
          'controller':'LoginCtrl'
@@ -53,6 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
    .state('home', {
     url: '/home',
+
     
          templateUrl: 'templates/home-know.html'
       
@@ -110,8 +117,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
   .state('app', {
     url: '/app',
+    cache: false,
     abstract: true,
     templateUrl: 'templates/menu.html',
+    controller: 'MenuCtrl'
   })
 
   .state('app.search', {
@@ -135,6 +144,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
     .state('app.singletest', {
     url: '/tests/:testId',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/test-know.html',
@@ -144,8 +154,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
     })
     .state('app.result', {
       url: '/result',
+      cache: false,
       views: {
         'menuContent': {
+
           templateUrl: 'templates/result-know.html',
           controller: 'ResultCtrl'
         }

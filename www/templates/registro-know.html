@@ -1,31 +1,50 @@
 <ion-view title="Registro">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <form ng-hide="cargando" ng-submit="registrar()" class="list">
-            <label class="item item-input" >              
-                <input type="text" placeholder="Nombre" ng-model="usuario.name">
+    <ion-content overflow-scroll="true" style="overflow:hidden;"padding="true" class="has-header back-login-register">
+        <center>  <h1>LOGO <br> DE <br> KNOWLEDGE</h1></center>
+        <form id="form-register" ng-submit="registrar()" class="list">
+            <label class="item item-input input-container" >  
+                           
+                <input type="text" required placeholder="" ng-model="usuario.name">
+                <span class="white input-label">Nombre</span> 
+                <div class="barc"></div>
             </label>
-            <label class="item item-input" >
-                
-                <input type="text" placeholder="Edad" ng-model="usuario.edad">
+            <label class="item item-input input-container" >
+                  
+                <input type="text"  required placeholder="" ng-model="usuario.edad">
+                <span class="white input-label">Edad</span>
+                <div class="barc"></div>
             </label>
-            <label class="item item-input" >
-                
-                <input type="text" placeholder="Nickname" ng-model="usuario.login">
+            <label class="item item-input input-container" >
+                  
+                <input type="text" required placeholder="" ng-model="usuario.login">
+                <span class="white input-label">Nickname</span>
+                <div class="barc"></div>
             </label>
-            <label class="item item-input" >
-                
-                <input type="email" placeholder="Email" ng-model="usuario.email">
+            <label class="item item-input input-container " >
+                  
+                <input type="email" required placeholder="" ng-model="usuario.email">
+                <span class="white input-label">Email</span>
+                <div class="barc"></div>
             </label>
-            <label class="item item-input" >
-                <input type="password" placeholder="Password" ng-model="usuario.password"> 
+            <label class="item item-input input-container" >
+                  
+                <input type="password" required placeholder="" ng-model="usuario.password"> 
+                <span class="white input-label">Password</span>
+                <div class="barc"></div>
             </label>
-            <input type="submit" class="button button-positive button-block " value="Registrate">
+            <input type="submit" class="button red-custom-button button-block " value="Registrarse">
 
-            <a href="#/login" class="button button-dark button-clear button-block ">Ingresa a Knowledge</a>
+            <a href="#/login" class="button white button-dark button-clear button-block ">¿Ya tienes una cuenta? Ingresa</a>
+
 
             
         </form>
-
-        <ion-spinner ng-show="cargando" icon="bubbles"></ion-spinner>
+        <!--<div ng-show="cargando" class="loading">
+            <div class="center">
+                <ion-spinner   icon="bubbles" class="spinner-light"></ion-spinner>
+                <center class="mess"><p>Registrando...</p><center>
+            </div>          
+        </div>-->
+        
     </ion-content>
 </ion-view>
