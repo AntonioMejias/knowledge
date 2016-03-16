@@ -54,6 +54,10 @@ h1,h2,h3 {
 *.test-font{
   font-family: testfamily !important;
 }
+
+*.tittle-font {
+  font-family: testfamilya !important;
+}
 .loading {
   display: inline-flex;
   left:25%;
@@ -91,7 +95,7 @@ i.big{
 
 .bar-stable.bar-header{
   background-color: #E43F3F;
-  border-bottom: 1px solid #E43F3F;
+  border-bottom: 4px solid  #E43F3F;
 }
 
 
@@ -163,6 +167,8 @@ span.text-menu {
 	font-size: 20px;
 }
 
+
+
 input {
 	font-family: input-font !important;
    color: white !important; 
@@ -209,8 +215,8 @@ input {
 #form-register label input {
 
   font-family: input-font !important;
-  color: #2D2D2D !important; 
-  font-size:20px !important;
+  color: white !important; 
+  font-size:16px !important;
 
  
 }
@@ -304,6 +310,30 @@ input {
 }
 /***TESTS*****/
 
+/***HOME***/
+.padding-personal .scroll{
+  padding: 16px 20px 40px 20px;
+  background-color: #E16860;
+}
+  .content-home{
+    padding: 10px;
+    text-align: justify;
+    background-color: #E43F3F; 
+    background: url('../img/fondo.png');
+    background-position: center !important;
+    background-size: cover !important;
+     -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  }
+
+  .content-home *{
+  font-family: input-font !important;
+}
+
+
+/***HOME***/
 
 /***QUESTIONS**/
 
