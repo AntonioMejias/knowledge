@@ -33,6 +33,14 @@
   font-family: "testfamilyc";
   src:url("Vonique64-Italic.ttf");
 }
+@font-face {
+  font-family: "knowledge";
+  src:url("Comfortaa-Regular.ttf");
+}
+@font-face {
+  font-family: "input-font";
+  src:url("Sansation_Regular.ttf");
+}
 
 
 body {
@@ -50,11 +58,22 @@ h1,h2,h3 {
   display: inline-flex;
   left:25%;
 }
+/*******************/
 
+/*******************/
 .center {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+i.big{
+  font-size: 120px;
+  margin-bottom: 0px;
+}
+*.knowledge-text,.big{
+  font-size: 42px;
+  font-family: knowledge !important;
 }
 
 .padding-c {
@@ -67,7 +86,21 @@ h1,h2,h3 {
   padding-right: 10px;
   padding-top: 20px;
 
-  
+}
+
+
+.bar-stable.bar-header{
+  background-color: #E43F3F;
+  border-bottom: 1px solid #E43F3F;
+}
+
+
+.bar-stable.bar-header .left-buttons button,.bar-stable.bar-header .title.header-item{
+  color:white;
+}
+
+.content1{
+    height: 100%;
 }
 
 span.text-menu {
@@ -90,7 +123,10 @@ span.text-menu {
 	background-color: #292929;
 	margin-left: auto;
 	margin-right: auto;
+  border:1px black solid;
 	display: block;
+      background-position: center !important;
+    background-size: cover !important;
 }
 
 #wrapper-image {
@@ -128,7 +164,9 @@ span.text-menu {
 }
 
 input {
-	font-family: montserrat !important;
+	font-family: input-font !important;
+   color: white !important; 
+  |font-size:14px !important;
 }
 
 .back-login-register {
@@ -169,7 +207,10 @@ input {
   margin: 0 30px 50px;
 }
 #form-register label input {
-	font-size: 20px;
+
+  font-family: input-font !important;
+  color: #2D2D2D !important; 
+  font-size:20px !important;
 
  
 }
@@ -245,7 +286,7 @@ input {
 .test > .item-content{
     background: none;
     box-sizing: border-box;
-    padding: 9%;
+    padding: 7.1% 9% ;
     overflow: hidden;
 }
 
@@ -290,7 +331,7 @@ input {
   width: 100%;
   height: 100%;
   /*background-color:  rgb(245,176,61);*/
-  padding: 30% 2% 36% 2%;
+  padding: 26% 2% 36% 2%;
 
 }
 

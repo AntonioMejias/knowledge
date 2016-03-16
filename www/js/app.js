@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','nvd3', 'starter.controllers', 'starter.services','ngResource','LocalStorageModule'])
+angular.module('starter', ['ionic','nvd3', 'starter.controllers', 'starter.services','ngResource','ngCordova','LocalStorageModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -19,8 +19,51 @@ angular.module('starter', ['ionic','nvd3', 'starter.controllers', 'starter.servi
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+      StatusBar.styleColor('#CC1D1D');
     }
   });
+})
+
+
+.directive('appFilereader', function($q) {
+    var slice = Array.prototype.slice;
+
+    return {
+        restrict: 'A',
+        require: '?ngModel',
+        link: function(scope, element, attrs, ngModel) {
+                if (!ngModel) return;
+
+                ngModel.$render = function() {};
+
+                element.bind('change', function(e) {
+                    var element = e.target;
+
+                    $q.all(slice.call(element.files, 0).map(readFile))
+                        .then(function(values) {
+                            if (element.multiple) ngModel.$setViewValue(values);
+                            else ngModel.$setViewValue(values.length ? values[0] : null);
+                        });
+
+                    function readFile(file) {
+                        var deferred = $q.defer();
+
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            deferred.resolve(e.target.result);
+                        };
+                        reader.onerror = function(e) {
+                            deferred.reject(e);
+                        };
+                        reader.readAsDataURL(file);
+
+                        return deferred.promise;
+                    }
+
+                }); //change
+
+            } //link
+    }; //return
 })
 
 .config(function (localStorageServiceProvider) {
@@ -125,9 +168,11 @@ angular.module('starter', ['ionic','nvd3', 'starter.controllers', 'starter.servi
 
   .state('app.search', {
     url: '/search',
+    cache: false,
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller:'PerfilCtrl'
       }
     }
   })

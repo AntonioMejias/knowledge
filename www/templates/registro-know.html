@@ -1,7 +1,8 @@
-<ion-view title="Registro">
+<ion-view title="">
     <ion-content overflow-scroll="true" style="overflow:hidden;"padding="true" class="has-header back-login-register">
-        <center>  <h1>LOGO <br> DE <br> KNOWLEDGE</h1></center>
-        <form id="form-register" ng-submit="registrar()" class="list">
+        <!--<center>  <h1>LOGO <br> DE <br> KNOWLEDGE</h1></center>-->
+         <center>  <h1 class="knowledge-text" style="color:white; "> Registro</h1></center>
+        <form id="form-register" ng-submit="registrar()"  enctype="multipart/form-data" class="list">
             <label class="item item-input input-container" >  
                            
                 <input type="text" required placeholder="" ng-model="usuario.name">
@@ -31,6 +32,13 @@
                 <input type="password" required placeholder="" ng-model="usuario.password"> 
                 <span class="white input-label">Password</span>
                 <div class="barc"></div>
+            </label>
+            <label class="item item-input input-container" >
+                
+                <!--<input type="file" required placeholder="" ng-model="usuario.file" accept="image/*" app-filereader> 
+                <span class="white input-label">Foto</span>
+                <div class="barc"></div>-->
+                <input type="file" required placeholder="" ng-model="usuario.file" accept="image/*" style="display:none;" app-filereader><i style=" font-size:26px;margin-right:10px;"class="ion-android-upload"></i> Subir Imagen</input>
             </label>
             <input type="submit" class="button red-custom-button button-block " value="Registrarse">
 

@@ -1,5 +1,50 @@
-<ion-view view-title="Search">
+<ion-view view-title="Search" style="background:#E43F3F">
   <ion-content>
-    <h1>Search</h1>
+    <ion-content overflow-scroll="true" style="overflow:hidden;"padding="true" class="has-header back-login-register">
+        <!--<center>  <h1>LOGO <br> DE <br> KNOWLEDGE</h1></center>-->
+         <center>  <h1 class="knowledge-text" style="color:white; "> Tus datos</h1></center>
+        <form id="form-register" ng-submit="actualizar()"  enctype="multipart/form-data" class="list">
+            <label class="item item-input input-container" >  
+                           
+                <input type="text" required placeholder="" ng-model="usuario.name">
+                <span class="white input-label">Nombre</span> 
+                <div class="barc"></div>
+            </label>
+            <label class="item item-input input-container" >
+                  
+                <input type="text"  required placeholder="" ng-model="usuario.edad">
+                <span class="white input-label">Edad</span>
+                <div class="barc"></div>
+            </label>
+            <label class="item item-input input-container" >
+                  
+                <input type="text" required placeholder="" ng-model="usuario.login">
+                <span class="white input-label">Nickname</span>
+                <div class="barc"></div>
+            </label>
+            <label class="item item-input input-container " >
+                  
+                <input type="email" required placeholder="" ng-model="usuario.email">
+                <span class="white input-label">Email</span>
+                <div class="barc"></div>
+            </label>
+            <label class="item item-input input-container" >
+                  
+                <input type="password" required placeholder="" ng-model="usuario.password"> 
+                <span class="white input-label">Password</span>
+                <div class="barc"></div>
+            </label>
+            <label class="item item-input input-container" >
+                <input type="file" required placeholder="" ng-model="usuario.file" accept="image/*" style="display:none;" app-filereader><i style=" font-size:26px;margin-right:10px;"class="ion-android-upload"></i> Subir Imagen</input>
+                 
+                <!--<span class="white input-label">Foto</span>
+                <div class="barc"></div>-->
+            </label>
+            <input type="submit" class="button red-custom-button button-block " value="Actualizar">
+
+            
+        </form>
+        
+    </ion-content>
   </ion-content>
 </ion-view>

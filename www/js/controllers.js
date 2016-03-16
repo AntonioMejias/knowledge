@@ -2,12 +2,13 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('LoginCtrl', function($rootScope,$scope,$location,$ionicPopup,$ionicLoading,LoginService,localStorageService) {
+.controller('LoginCtrl', function($rootScope,$scope,$location,$ionicPopup,$ionicLoading,$ionicNavBarDelegate,LoginService,localStorageService) {
 
     if(localStorageService.get(user))
         $location.path("/app/playlists");
-   
 
+    $ionicNavBarDelegate.showBackButton(false);
+   
     $scope.cargando = false;
     $scope.usuario ={};
     var user = {};
@@ -56,12 +57,16 @@ angular.module('starter.controllers', [])
 
     $scope.usuario={}
     $scope.cargando = false;
+    $scope.upload_file  = "";
+
+
     $scope.registrar= function () {
-        //$scope.cargando = true;
+        //console.log("FILE:"+$scope.usuario.file);
         $ionicLoading.show({
             template: '<span>Registrando</span><ion-spinner  icon="dots" class="spinner-light"></ion-spinner>'
         });
-        RegistroService.registrarUser($scope.usuario).$promise
+        RegistroService.registrarUser($scope.usuario)
+            .$promise
             .then(function (response) {
                 $scope.cargando = false;
                 $ionicLoading.hide();
@@ -281,6 +286,8 @@ angular.module('starter.controllers', [])
 .controller('MenuCtrl', function($scope,$location,localStorageService) {
     var user = {};
     $scope.user = localStorageService.get(user);
+    $scope.user.urlFoto = 'https://knowledge-antoniomejias.c9users.io/'+ $scope.user.urlFoto;
+        console.log( $scope.user.urlFoto);
     console.log('hola mundo');
 
     $scope.logout = function () {
@@ -288,23 +295,13 @@ angular.module('starter.controllers', [])
         $location.path('/login');
     }
     
-});
-
-/*.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
 })
 
+.controller('PerfilCtrl', function($scope, localStorageService) {
+  var user = {};
+  $scope.usuario = localStorageService.get(user);
+});
+/*
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
