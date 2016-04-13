@@ -1,10 +1,11 @@
 <ion-view view-title="Knowledge">
   <ion-content ng-class="background" id="question" style="overflow:hidden;">
+  <div ng-hide="cargando" >
   <div class="padd-head">
     <p class="title-q roboto" ng-bind="preguntaActual.nombre"></p>
   </div>
   		
-     <ion-list class="hola" ng-cloak ng-hide="cargando">
+     <ion-list class="hola" ng-cloak>
       
       <div  class="wrapper" >
 	     
@@ -21,11 +22,11 @@
       	</ion-item>
         </div>
       </ion-list>
-
+  </div>
       <div ng-show="cargando" class="loading">
         <div class="center">
-            <ion-spinner   icon="bubbles"></ion-spinner>
-            <center class="mess"><p>Cargando...</p><center>
+            <ion-spinner   icon="android" class="spinner-assertive"></ion-spinner>
+            
         </div>          
     </div>
   </ion-content>

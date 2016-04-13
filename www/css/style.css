@@ -66,9 +66,10 @@ h1,h2,h3 {
 
 /*******************/
 .center {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    position: fixed;
+    left: 45%;
+    top: 45%;
+    
 }
 
 i.big{
@@ -114,27 +115,53 @@ span.text-menu {
 }
 
 .username {
-	margin-top: 5px;
-	font-size: 18px;
+	margin-top: 9px;
+	font-size: 16px;
+  color: white;
+  font-family: montserrat !important;
 
+}
+.litle {
+  font-size: 12px;
+}
+
+.menu-left .list > * {
+  border:0px;
+  /*font-family: input-font !important;*/
+  color: #6C6C6B;
+}
+
+
+.menu-left .list  .item-content i  {
+  font-size: 24px;
+  color:#6C6C6B;
+  margin-right: 15px;
 }
 
 .perfil-image {
 	margin-bottom: 0px;
-	width: 85px;
-	height: 85px;
+	width: 70px;
+	height: 70px;
 	border-radius: 50%;
 	background-color: #292929;
 	margin-left: auto;
-	margin-right: auto;
-  border:1px black solid;
+	margin-right: 10px;
+  /*border:1px black solid;*/
 	display: block;
       background-position: center !important;
     background-size: cover !important;
+    padding-right: 20px;
+}
+
+.inline {
+  padding-left: 10px;
 }
 
 #wrapper-image {
-	padding: 10px 0px 10px 0px;	
+	padding: 20px 0px 20px 0px;	
+  background: url('../img/wall2.jpg');
+  background-position: center !important;
+  background-size: cover !important;
 
 }
 
@@ -144,8 +171,8 @@ span.text-menu {
 }
 
 .center {
-	position:fixed;
-    left: 30%;
+	/*position:fixed;
+    left: 30%;*/
 }
 
 .size.spinner svg {
@@ -311,20 +338,20 @@ input {
 /***TESTS*****/
 
 /***HOME***/
-.padding-personal .scroll{
-  padding: 16px 20px 40px 20px;
-  background-color: #E16860;
-}
+.padding-personal .scroll {
+  padding: 50px 20px 40px 20px;
+  background-color: white;
+  }
   .content-home{
     padding: 10px;
     text-align: justify;
-    background-color: #E43F3F; 
-    background: url('../img/fondo.png');
+    background-color: white; 
+    background: url('../img/fondo.jpg');
     background-position: center !important;
     background-size: cover !important;
-     -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   }
 
@@ -365,9 +392,10 @@ input {
 
 }
 
-.content-question {
+.content-question, .inline {
 
   display: inline-flex;
+
   
 }
 

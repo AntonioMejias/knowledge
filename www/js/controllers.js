@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
 .controller('RegistroCtrl', function($scope,$ionicPopup,$location,$ionicLoading, RegistroService) {
     
 
-    $scope.usuario={}
+    $scope.usuario={};
     $scope.cargando = false;
     $scope.upload_file  = "";
 
@@ -77,8 +77,7 @@ angular.module('starter.controllers', [])
                     template: response.mensaje
                 });
 
-                alertPopup.then((res) => {
-                    console.log("preuba e boton" + response.success);
+                alertPopup.then(function (res) {
 
                     if (response.success)
                         $location.path("/login");
@@ -91,6 +90,7 @@ angular.module('starter.controllers', [])
     $scope.tests = [];
     $scope.cargando = true;
     TestsService.getAllTests().$promise.then(function (response) {
+        $scope.cargando = false;
         $scope.tests = response.tests.map(function (test) {
             switch (test.nombre) {
                 case 'Informática':
@@ -108,7 +108,7 @@ angular.module('starter.controllers', [])
             }
             return test;
         })
-        $scope.cargando = false;;
+        //$scope.cargando = false;
         console.log($scope.tests);
     })  
 
@@ -198,6 +198,7 @@ angular.module('starter.controllers', [])
 
 .controller('ResultCtrl',function($scope,$ionicNavBarDelegate,$window, CheckService){
     console.log(CheckService.dataQuiz);
+    $scope.cargando = true;
     $scope.background=CheckService.dataQuiz.background;
     $scope.vm={};
     $scope.vm.options = {
@@ -224,7 +225,7 @@ angular.module('starter.controllers', [])
     
     CheckService.validateQuiz().then(function (response) {
          console.log(response);
-
+         $scope.cargando = false;
         if(response.aciertos > response.fallos) {
             $scope.mensaje="¡Excelente!";
             $scope.icon="ion-happy";
@@ -297,17 +298,25 @@ angular.module('starter.controllers', [])
     
 })
 
-.controller('PerfilCtrl', function($scope, localStorageService) {
+.controller('PerfilCtrl', function($scope,$ionicPopup,$ionicLoading, localStorageService, UpdateService) {
   var user = {};
   $scope.usuario = localStorageService.get(user);
-});
-/*
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
+  $scope.actualizar = function () {
+    console.log('aactualziadno');
+        $ionicLoading.show({
+            template: '<span>Actualizando</span><ion-spinner  icon="dots" class="spinner-light"></ion-spinner>'
+        });
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});*/
+        UpdateService.updateUser($scope.usuario)
+            .then(function (response) {
+                $ionicLoading.hide();
+
+                var alertPopup = $ionicPopup.alert({
+                    title: response.titulo,
+                    template: response.mensaje
+                });
+
+            })
+  }
+});
+

@@ -18,9 +18,13 @@
     </ion-header-bar>
     <ion-content scroll="false">
     <div id="wrapper-image">
-      
-        <div class="perfil-image" style="background:url('{{user.urlFoto}}');"></div>
-        <center><p class="username" ng-bind="user.login"></p><center>
+        <div class="inline">
+            <div class="perfil-image" style="background:url('{{user.urlFoto}}');"></div>
+              <center>
+                <p class="username" ng-bind="user.login"></p>
+                <p class="username litle" ng-bind="user.email"></p>
+              <center>
+        </div>
         <!--<hr>-->
     </div>
       
@@ -28,20 +32,20 @@
       <ion-list>
         <ion-item menu-close href="#/app/playlists">
         <i class="ion-ios-home"></i>
-          <span class="text-menu">Home</span>
+          <span class=" text-menu">Home</span>
         </ion-item>
         <ion-item menu-close href="#/app/search">
          <i class="icon ion-person-stalker"></i>
-          <span class="text-menu">Perfil</span>
+          <span class=" text-menu">Perfil</span>
         </ion-item>
         <ion-item menu-close href="#/app/tests">
         <i class="ion-ios-game-controller-b"></i>
-            <span class="text-menu">Juega</span>
+            <span class=" text-menu">Juega</span>
           
         </ion-item>
         <ion-item menu-close ng-click="logout()">
-        <i class="ion-power"></i>
-            <span class="text-menu">Salir</span>
+            <i class="ion-power"></i>
+            <span class=" text-menu">Salir</span>
           
         </ion-item>
         
